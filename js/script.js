@@ -41,6 +41,8 @@ function playRound(playerSelection , computerSelection){
         computerScoreBoard.textContent = `Computer Score: ${computerScore}`
     }
 
+    checkForWinner()
+
 }
 
 function buttonListeners(){
@@ -51,6 +53,11 @@ function buttonListeners(){
             playRound(playerSelection, computerSelection);
         });
       });
+}
+
+function checkForWinner(){
+    if (playerScore == 5) textLine.textContent = "Player Wins!"
+    if (computerScore == 5) textLine.textContent = "Computer Wins!"
 }
 
 function game(){
