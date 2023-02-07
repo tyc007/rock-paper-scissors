@@ -2,8 +2,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     height: 100vh;
     background-color: #abdfff;
+    font-family: 'Lucida Console', sans-serif;
 }
 
 #container {
@@ -16,7 +18,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
 }
 
 #scores {
@@ -25,13 +26,21 @@ body {
     align-items: center;
     margin: 20px;
     gap: 10px;
+    text-align: center;
+}
+
+#playerScore, #computerScore {
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+    width: 7.5rem;
 }
 
 #choices {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 20px;
 }
 
 button {

@@ -30,7 +30,7 @@ function playRound(playerSelection , computerSelection){
         (playerSelection == 'scissors'  && computerSelection == 'paper')) {
         textLine.textContent = textLine.textContent + ` You Win! Your ${playerSelection} beats their ${computerSelection}.`;
         playerScore += 1;
-        playerScoreBoard.textContent = `Player Score: ${playerScore}`
+        playerScoreBoard.textContent = `${playerScore}`
     }
     else if(playerSelection == computerSelection){
         textLine.textContent = textLine.textContent + ` You guys tied.`;
@@ -38,7 +38,7 @@ function playRound(playerSelection , computerSelection){
     else{
         textLine.textContent = textLine.textContent + ` You Lose! Their ${computerSelection} beats your ${playerSelection}.`;
         computerScore += 1;
-        computerScoreBoard.textContent = `Computer Score: ${computerScore}`
+        computerScoreBoard.textContent = `${computerScore}`
     }
 
     checkForWinner()
@@ -62,7 +62,7 @@ function checkForWinner(){
 
 function game(){
     //let playerSelection = prompt
-    textLine.textContent = "Let's play Rock, Paper Scissors! Put in your choice!";
+    //textLine.textContent = " Put in your choice!";
     
 }
 
