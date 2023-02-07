@@ -1,0 +1,46 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: #abdfff;
+  }
+  
+  #container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  #choices {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    font-size: 24px;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #74ff9e;
+    border-radius: 50%;
+    border: 5px solid black;
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+  }
+  
+
+  
