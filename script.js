@@ -4,6 +4,7 @@ const textLine = document.getElementById('textLine');
 const playerScoreBoard = document.getElementById('playerScore');
 const computerScoreBoard = document.getElementById('computerScore');
 const buttons = document.querySelectorAll('button');
+const choicesDisplay = document.getElementById('choices');
 
 let playerSelection = '';
 let computerSelection = '';
@@ -58,14 +59,29 @@ function buttonListeners(){
 }
 
 function checkForWinner(){
-    if (playerScore == 5) textLine.textContent = "Player Wins!";
-    if (computerScore == 5) textLine.textContent = "Computer Wins!";
+    if (playerScore == 5) {
+        textLine.textContent = "You Win! 😊 Play Again?";
+        document.body.style.backgroundColor = "green";
+    }
+    if (computerScore == 5) {
+        textLine.textContent = "Computer Wins! 😭 Play Again?";
+        document.body.style.backgroundColor = "red";
+    }
     if ((playerScore == 5) || (computerScore == 5)) {
-        buttons.forEach((button) => {
-            button.removeEventListener('click', getPlayerChoice)
+        buttons.forEach(button => {
+            button.parentNode.removeChild(button);
           });
+        addResetOption();
     }
 }
 
+function addResetOption(){
+    const resetButton = document.createElement("button");
+    resetButton.innerText = "↻";
+    resetButton.style.cursor = "pointer";
+    resetButton.addEventListener('click',() => location.reload());
+    
+    choicesDisplay.appendChild(resetButton);
+}
+
 buttonListeners();
-game();
