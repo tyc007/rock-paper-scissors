@@ -1,5 +1,5 @@
 const choices = ['rock', 'paper', 'scissors'];
-const choicesEmoji = ['✊', '✋', '✌️'];
+const emojiMap = {"rock": "✊", "paper": "✋", "scissors": "✌️"};
 
 const textLine = document.getElementsByClassName('textLine');
 const playerScoreBoard = document.getElementById('playerScore');
@@ -17,9 +17,8 @@ let computerScore = 0;
 
 // Will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’
 function computerPlay(){
-    let computerChoice = getRandomInt(choices.length)
-    let computerSelection = choices[computerChoice];
-    textLine[0].innerHTML = `Computer chooses ${choicesEmoji[computerChoice]}!<br/>`;
+    let computerSelection = choices[getRandomInt(choices.length)];
+    textLine[0].innerHTML = `Computer chooses ${emojiMap[computerSelection]}`;
     return computerSelection;
 }
 
@@ -34,13 +33,15 @@ function getPlayerChoice(e){
     playRound(playerSelection, computerSelection);
 }
 
+
+
 // Returns the winner between player and computer selection in Rock Paper Scissors game
 function playRound(playerSelection , computerSelection){
     if ((playerSelection == 'rock'      && computerSelection == 'scissors')   ||
         (playerSelection == 'paper'     && computerSelection == 'rock')       ||
         (playerSelection == 'scissors'  && computerSelection == 'paper')) {
         textLine[1].innerHTML  = `<b>You Won!</b>`;
-        textLine[2].innerHTML  = `Your ${playerSelection} beats their ${computerSelection}.`;
+        textLine[2].innerHTML  = `Your ${emojiMap[playerSelection]} beats their ${emojiMap[computerSelection]}.`;
         playerScore += 1;
         playerScoreBoard.textContent = `${playerScore}`
     }
@@ -50,7 +51,7 @@ function playRound(playerSelection , computerSelection){
     }
     else{
         textLine[1].innerHTML  = `<b>You Lost!</b>`;
-        textLine[2].innerHTML  = `Their ${computerSelection} beats your ${playerSelection}.`;
+        textLine[2].innerHTML  = `Their ${emojiMap[computerSelection]} beats your ${emojiMap[playerSelection]}.`;
         computerScore += 1;
         computerScoreBoard.textContent = `${computerScore}`
     }
