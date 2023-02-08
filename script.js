@@ -22,6 +22,12 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max)
 }
 
+function getPlayerChoice(e){
+    playerSelection = e.target.id;
+    computerSelection = computerPlay();
+    playRound(playerSelection, computerSelection);
+}
+
 // Returns the winner between player and computer selection in Rock Paper Scissors game
 function playRound(playerSelection , computerSelection){
     console.log(playerSelection, computerSelection)
@@ -47,23 +53,18 @@ function playRound(playerSelection , computerSelection){
 
 function buttonListeners(){
     buttons.forEach((button) => {
-        button.addEventListener('click', () => {
-            playerSelection = button.id;
-            computerSelection = computerPlay();
-            playRound(playerSelection, computerSelection);
-        });
+        button.addEventListener('click', getPlayerChoice)
       });
 }
 
 function checkForWinner(){
-    if (playerScore == 5) textLine.textContent = "Player Wins!"
-    if (computerScore == 5) textLine.textContent = "Computer Wins!"
-}
-
-function game(){
-    //let playerSelection = prompt
-    //textLine.textContent = " Put in your choice!";
-    
+    if (playerScore == 5) textLine.textContent = "Player Wins!";
+    if (computerScore == 5) textLine.textContent = "Computer Wins!";
+    if ((playerScore == 5) || (computerScore == 5)) {
+        buttons.forEach((button) => {
+            button.removeEventListener('click', getPlayerChoice)
+          });
+    }
 }
 
 buttonListeners();

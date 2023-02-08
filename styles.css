@@ -24,17 +24,32 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     margin: 20px;
     gap: 10px;
-    text-align: center;
 }
 
-#playerScore, #computerScore {
+#playerScore, #computerScore{
+    display: flex;
     text-align: center;
+    align-items: center;
+    justify-content: center;
     border: 1px solid black;
     padding: 5px;
     margin: 5px;
     width: 7.5rem;
+    height: 25px;
+}
+
+#textLine{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 10px;
+    height: 5rem;
 }
 
 #choices {
